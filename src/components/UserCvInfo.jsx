@@ -1,5 +1,5 @@
 import PersonalInfoForm from "./PersonalInfoForm";
-import EducationInfoForm from "./EducationInfoForm";
+import EducationInfoForm from "./NewEducationForm";
 import WorkExpInfoForm from "./WorkExpInfoForm";
 
 function UserCvInfo(){

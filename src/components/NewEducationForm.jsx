@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useRef } from "react";
-function EducationInfoForm(props){
-    
+
+function NewEducationForm(props){
     
     const [school , setNewSchool] = useState('');
     /* const schoolInputRef = useRef(); */
     const degreeInputRef = useRef();
+    const subjectInputRef = useRef();
     const startDateInputRef = useRef();
     const endDateInputRef = useRef();
     const locationInputRef = useRef();
@@ -15,13 +16,15 @@ function EducationInfoForm(props){
 
         /* const submittedSchool = schoolInputRef.current.value; */
         const submittedDegree = degreeInputRef.current.value;
+        const submittedSubject = subjectInputRef.current.value;
         const submittedStartDate = startDateInputRef.current.value;
         const submittedEndDate = endDateInputRef.current.value;
         const submittedLocation = locationInputRef.current.value;
         
-        const educationData = {
+        const educationData = { //pass to parent component (CvRender). where this component is used.
             school : {school}, // from useState
             degree : submittedDegree,
+            subject : submittedSubject,
             startDate: submittedStartDate,
             endDate : submittedEndDate,
             location: submittedLocation,
@@ -29,11 +32,14 @@ function EducationInfoForm(props){
         }
 
         console.log(educationData);
-        props.onAddEducation(educationData);
+        
+        /* props.onAddEducation(educationData); */ //expected function on this prop
 
         //TODO create and array/storage with submitted eduData
         
     }
+
+    
     
     return(
         <div>
@@ -46,12 +52,16 @@ function EducationInfoForm(props){
                         onChange = {e => setNewSchool(e.target.value)}
                         value={school}
                     />
-                    
                 </div>
 
                 <div className="form-field">
                     <label htmlFor="degree">Degree/Qualification</label>
                     <input type="text" id='degree' ref={degreeInputRef}/>
+                </div>
+
+                <div className="form-field">
+                    <label htmlFor="subject">Field of Study</label>
+                    <input type="text" id='degree' ref={subjectInputRef}/>
                 </div>
 
                 <div className="form-field">
@@ -74,4 +84,4 @@ function EducationInfoForm(props){
     );
 };
 
-export default EducationInfoForm;
+export default NewEducationForm;
