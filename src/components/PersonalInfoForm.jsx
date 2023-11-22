@@ -10,8 +10,8 @@ function PersonalInfoForm(){
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="Email">Email</label>
-                    <input type="text" id='full-name' />
+                    <label htmlFor="email">Email</label>
+                    <input type="text" id='email' />
                 </div>
 
                 <div className="form-field">

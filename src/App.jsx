@@ -1,4 +1,4 @@
-import UserCvInfo from "./components/UserCvInfo";
+import NewUserForm from "./components/NewUserForm";
 import CvRender from "./components/CvRender";
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <UserCvInfo />
+      <NewUserForm />
       <CvRender />
     </>
   )
